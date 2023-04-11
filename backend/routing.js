@@ -60,6 +60,7 @@ router.route('/userList').get(async function (req, res)
 });
 */
 
+//LOOK AT POTD TRIGGER FOR INSPO
 router.route('/signUp').post(async function (req, response) {
     let users = await dbo.getDb('squordle').collection('users');
 
@@ -75,19 +76,28 @@ router.route('/signUp').post(async function (req, response) {
     });
 });
 
+//
 router.route('/signIn').post(async function (req, res) {
     let user = req.body;
     dbo.getDb('squordle')
        .collection('users')
+       //POTD TRIGGER FOR $PROJECT INFO
        .aggregate([{ $project: { _id: 0 } },
                    { $match: { name: user.name,
-                               password: user.password } },
-                   { $sort:  { 'name': 1 } } 
+                               password: user.password } }
                  ])
        .toArray(function (err, result) {
-           if (err) throw err;
-           res.json(result);
+           if (err)
+               res.status(400).send('Error fetching user');
+           else
+               res.json(result);
+
     });
 });
+
+//Save function through MongoDB
+//Router.route('/saveData').post(async function (req, response) {
+//    
+//}
 
 module.exports = router;

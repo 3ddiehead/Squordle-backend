@@ -61,7 +61,6 @@ function DisplayMan(props)
                          "showBackdrop": !displayState["showBackdrop"]});
   	}
 
-    // CHANGE S.T. ONLY HEADER & GSDIV ARE RE-RENDERED
 	function reload()
     {
 		setDisplayState({"showInfo": false,

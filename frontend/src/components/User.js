@@ -41,6 +41,19 @@ function User(props)
         });
     }
 
+    // async function saveData() {
+    //     await fetch(`http://localhost:3000/saveData`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({name, password}),
+    //     }).then(res => { 
+    //         props.userHandler(name);
+    //         res.json();
+    //     });
+    // }
+
 	return (
         <form onSubmit={handleSubmit}>
             <label> username:

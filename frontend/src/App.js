@@ -12,6 +12,7 @@ function App()
     console.log("APP!");
 
     // USER AUTH ---------------------------------------------------------------
+    //Array is ['user', isLoggedIn]
     const [user, setUser] = useState(['', false]);
     function userHandler(name) {
         setUser([name, true]);
