@@ -48,4 +48,19 @@ function loadSave()
     };
 };
 
+function loadUser(user)
+{
+            window.localStorage.pokeDollars = user['saveState']['pokeDollars'];
+            window.localStorage.adoptedShuckle = user[saveState][];
+            window.localStorage.shopState = user[saveState][];
+            window.localStorage.spicyPoffin = user[saveState][];
+            window.localStorage.sweetPoffin = user[saveState][];
+            window.localStorage.goldPoffin = user[saveState][];
+            window.localStorage.lemonade = user[saveState][];
+            window.localStorage.shuckleShiny = user[saveState][];
+            window.localStorage.shuckleChildren = user[saveState][];
+            window.localStorage.ticket0 = user[saveState][];
+            window.localStorage.region = user[saveState][];
+}
+
 export default loadSave;
